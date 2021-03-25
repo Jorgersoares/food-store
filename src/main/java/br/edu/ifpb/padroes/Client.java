@@ -9,8 +9,8 @@ public class Client {
 
         Order order = new Order();
         OrderManager orderManager = new OrderManager(order);
-        orderManager.payOrder(new CreditCardPayment());
-        orderManager.cancelOrder();
+        orderManager.getState().payOrder(new CreditCardPayment());
+        orderManager.getState().cancelOrder();
 
     }
 }
