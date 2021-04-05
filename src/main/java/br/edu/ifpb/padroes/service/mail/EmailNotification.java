@@ -1,18 +1,18 @@
 package br.edu.ifpb.padroes.service.mail;
 
 import br.edu.ifpb.padroes.domain.Customer;
+import br.edu.ifpb.padroes.service.event.Subscriber;
 
-public class EmailNotification {
+public class EmailNotification implements Subscriber {
 
-    private String emailAdministration = "contact@food-store.com";
+    private final String emailAdministration = "contact@food-store.com";
 
-    public void sendMailNotification(String message, Customer customer) {
-        System.out.println("send mail notification to "+ customer.getEmail());
+    @Override
+    public void update(String eventType, String message, Customer customer) {
+        if (customer != null) {
+            System.out.println("send mail notification to "+ customer.getEmail());
+        } else {
+            System.out.println("send mail notification to ="+emailAdministration);
+        }
     }
-
-    public void sendMailNotification(String message) {
-        System.out.println("send mail notification to ="+emailAdministration);
-    }
-
-
 }

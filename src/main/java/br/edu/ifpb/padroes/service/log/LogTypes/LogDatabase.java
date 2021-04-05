@@ -1,4 +1,10 @@
 package br.edu.ifpb.padroes.service.log.LogTypes;
 
-public class LogDatabase {
+import br.edu.ifpb.padroes.service.log.Log;
+
+public class LogDatabase implements Log {
+    @Override
+    public void log(String message) {
+        System.out.println("save data to database");
+    }
 }

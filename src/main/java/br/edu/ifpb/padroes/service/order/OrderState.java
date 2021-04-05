@@ -1,6 +1,5 @@
 package br.edu.ifpb.padroes.service.order;
 
-import br.edu.ifpb.padroes.domain.Order;
 import br.edu.ifpb.padroes.service.payment.PaymentMethod;
 
 public abstract class OrderState {
